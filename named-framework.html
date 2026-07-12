@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The NAMED Framework | Momentum Strategic Advisory</title>
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,500;1,8..60,600&family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root { --bg: #FAF8F4; --bg-alt: #DDD8CE; --bg-alt-light: #ECE8E1; --ink: #1B1B1B; --ink-soft: #2F2F2F; --muted: #6F6A60; --rule: #D9D3C6; --teal: #0F5D63; --teal-dark: #0A4245; --teal-light: #1A8088; --teal-accent: #85CED2; --white: #FFFFFF; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--ink); font-family: 'Albert Sans', sans-serif; font-size: 18px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  .serif { font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-variation-settings: "opsz" 60; letter-spacing: -0.015em; }
+  .container { max-width: 1320px; margin: 0 auto; padding: 0 48px; }
+  section { padding: 72px 0; }
+  .eyebrow { text-transform: uppercase; letter-spacing: 0.22em; font-size: 14px; font-weight: 700; color: var(--teal); margin-bottom: 24px; }
+  h1, h2, h3 { font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-variation-settings: "opsz" 60; letter-spacing: -0.02em; }
+  h1 { font-size: clamp(38px, 5vw, 60px); line-height: 1.08; }
+  p { color: var(--ink-soft); font-size: 18px; line-height: 1.65; }
+  p + p { margin-top: 18px; }
+  a { color: inherit; }
+  a.btn, .btn { display: inline-flex; align-items: center; gap: 10px; padding: 16px 28px; background: var(--teal); color: #FFFFFF !important; text-decoration: none; font-size: 15px; font-weight: 600; border-radius: 2px; border: 0; }
+  .nav { position: sticky; top: 0; z-index: 50; background: rgba(250, 248, 244, 0.92); backdrop-filter: saturate(180%) blur(12px); -webkit-backdrop-filter: saturate(180%) blur(12px); border-bottom: 1px solid transparent; transition: border-color 0.3s ease; }
+  .nav.scrolled { border-bottom-color: var(--rule); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 84px; }
+  .brand-lockup { display: inline-flex; align-items: center; text-decoration: none; color: var(--ink); }
+  .brand-lockup img { height: 42px; width: auto; display: block; }
+  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-links a { text-decoration: none; color: var(--ink); font-size: 15px; font-weight: 500; letter-spacing: 0.02em; white-space: nowrap; }
+  .nav-links a:not(.btn):hover { color: var(--teal); }
+  .nav-links a.current { color: var(--teal); }
+  .breadcrumb { font-size: 13px; color: var(--muted); font-weight: 600; margin-bottom: 24px; }
+  .breadcrumb a { color: var(--teal); text-decoration: none; }
+  .bold-lede { font-weight: 700; color: var(--ink); font-size: 19px; margin-top: 24px; }
+
+  .persona-grid { margin-top: 24px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--rule); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .persona-card { background: var(--bg); padding: 20px 24px 28px; display: flex; flex-direction: column; gap: 10px; }
+  .persona-thumb { width: calc(100% + 48px); margin: -20px -24px 4px; aspect-ratio: 1600 / 836; object-fit: cover; display: block; cursor: zoom-in; transition: opacity 0.2s ease; }
+  .persona-thumb:hover { opacity: 0.88; }
+  .persona-card .name { font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 22px; color: var(--ink); text-align: right; }
+  .persona-card .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--teal); font-weight: 700; text-align: right; }
+  .persona-card p { font-size: 13.5px; line-height: 1.5; color: var(--muted); max-width: none; text-align: right; }
+  @media (max-width: 980px) { .persona-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .persona-grid { grid-template-columns: 1fr; } }
+
+  .nora-deepdive { margin-top: 64px; padding: 46px; background: var(--bg-alt-light); border: 1px solid var(--rule); border-radius: 3px; color: var(--ink); }
+  .nora-deepdive .eyebrow { color: var(--teal); margin-bottom: 8px; }
+  .nora-deepdive h2 { font-size: clamp(28px, 3vw, 40px); color: var(--ink); margin-bottom: 20px; }
+  .nora-deepdive .lede { font-family: 'Source Serif 4', serif; font-style: italic; font-size: 20px; color: var(--ink-soft); margin-bottom: 28px; max-width: none; }
+  .nora-deepdive p { color: var(--ink-soft); font-size: 17px; line-height: 1.65; max-width: none; }
+  .nora-deepdive .closer { font-family: 'Source Serif 4', serif; font-style: italic; font-weight: 600; font-size: 20px; color: var(--teal); margin-top: 32px; max-width: none; }
+  .nora-card-img { margin-top: 40px; max-width: 560px; position: relative; }
+  .nora-card-img img { width: 100%; height: auto; display: block; border-radius: 4px; box-shadow: 0 30px 80px rgba(27,27,27,0.18); cursor: zoom-in; transition: transform 0.2s ease; }
+  .nora-card-img img:hover { transform: scale(1.015); }
+  .nora-card-img .zoom-hint { margin-top: 12px; font-size: 12px; color: var(--muted); }
+
+  .lightbox { position: fixed; inset: 0; background: rgba(10,10,10,0.88); display: none; align-items: center; justify-content: center; z-index: 999; padding: 40px; cursor: zoom-out; }
+  .lightbox.open { display: flex; }
+  .lightbox img { max-width: 92vw; max-height: 88vh; width: auto; height: auto; border-radius: 4px; box-shadow: 0 40px 100px rgba(0,0,0,0.5); }
+  .lightbox .close-hint { position: absolute; top: 28px; right: 36px; color: rgba(255,255,255,0.7); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; }
+
+  footer { padding: 64px 0; background: var(--bg); font-size: 14px; color: var(--muted); border-top: 1px solid var(--rule); }
+  footer .foot { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 48px; align-items: start; }
+  footer a { color: var(--muted); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.2s ease, border-color 0.2s ease; }
+  footer a:hover { color: var(--teal); border-bottom-color: var(--teal); }
+  .foot-brand { display: inline-flex; align-items: center; margin-bottom: 16px; }
+  .foot-brand img { height: 30px; width: auto; display: block; }
+  .foot-tagline { color: var(--muted); font-size: 14px; max-width: 32ch; line-height: 1.6; }
+  .foot-heading { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--teal); font-weight: 700; margin-bottom: 16px; }
+  .foot-links { display: flex; flex-direction: column; gap: 10px; }
+  .foot-links a.current { color: var(--teal); }
+  .foot-bottom { margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; font-size: 13px; flex-wrap: wrap; gap: 16px; }
+  @media (max-width: 720px) { footer .foot { grid-template-columns: 1fr; gap: 40px; } }
+  @media (max-width: 820px) { .nav-links a:not(.btn) { display: none; } .container { padding: 0 24px; } }
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="/" class="brand-lockup" aria-label="Momentum, home">
+      <img src="./Momentum Logo (Long) - Blk transparent.png" alt="Momentum Strategic Advisory" />
+    </a>
+    <div class="nav-links">
+      <a href="/#work">Work</a>
+      <a href="/#frameworks" class="current">Lifecycle Frameworks</a>
+      <a href="/#services">Services</a>
+      <a href="/#approach">Approach</a>
+      <a href="/#engagements">Engagements</a>
+      <a href="/#about">About</a>
+      <a href="https://calendly.com/brit-maxmomentum/new-meeting" target="_blank" rel="noopener" class="btn">Book a call </a>
+    </div>
+  </div>
+</nav>
+
+<section style="padding-bottom: 16px;">
+  <div class="container">
+    <div class="eyebrow">Consumer Segmentation Using Personas</div>
+    <h1 class="serif">The NAMED Framework<sup style="font-size: 16px; font-weight: 400;">©</sup></h1>
+
+    <p style="margin-top: 24px;">Banks often support 2 types of customers: mass-market, or high-net-worth. Everyone in between, the ones building real wealth but not hitting the minimum wealth targets, get whatever baseline product happens to fit.</p>
+    <p>NAMED personifies that gap instead of ignoring it.</p>
+    <p class="bold-lede">I've created 8 profiles as an example of the lifecycle stages of bank customers:</p>
+  </div>
+</section>
+
+<section style="padding-top: 0;">
+  <div class="container">
+    <div class="persona-grid">
+      <div class="persona-card"><img class="persona-thumb" src="./jake-thumb.jpg" alt="JAKE framework card" onclick="openLightbox('./jake-full.jpg', 'JAKE framework card')" /><div class="name">JAKE</div><div class="label">The entry point</div><p>First real job, first paycheck, first financial decisions.</p></div>
+      <div class="persona-card"><img class="persona-thumb" src="./nora-thumb.jpg" alt="NORA framework card" onclick="openLightbox('./nora-full.jpg', 'NORA framework card')" /><div class="name">NORA</div><div class="label">The disciplined earner</div><p>Disciplined with every dollar. Building toward something that lasts.</p></div>
+      <div class="persona-card"><img class="persona-thumb" src="./erin-thumb.jpg" alt="ERIN framework card" onclick="openLightbox('./erin-full.jpg', 'ERIN framework card')" /><div class="name">ERIN</div><div class="label">The intentional earner</div><p>The income arrived. Now the wealth building begins.</p></div>
+      <div class="persona-card"><img class="persona-thumb" src="./drew-thumb.jpg" alt="DREW framework card" onclick="openLightbox('./drew-full.jpg', 'DREW framework card')" /><div class="name">DREW</div><div class="label">The strategy shift</div><p>Money is no longer just earned, it's working.</p></div>
+      <div class="persona-card"><img class="persona-thumb" src="./wade-thumb.jpg" alt="WADE framework card" onclick="openLightbox('./wade-full.jpg', 'WADE framework card')" /><div class="name">WADE</div><div class="label">The sandwich generation</div><p>Supporting kids and aging parents simultaneously.</p></div>
+      <div class="persona-card"><img class="persona-thumb" src="./grace-thumb.jpg" alt="GRACE framework card" onclick="openLightbox('./grace-full.jpg', 'GRACE framework card')" /><div class="name">GRACE</div><div class="label">The payoff years</div><p>The discipline of the earlier years is proving itself.</p></div>
+      <div class="persona-card"><img class="persona-thumb" src="./ross-thumb.jpg" alt="ROSS framework card" onclick="openLightbox('./ross-full.jpg', 'ROSS framework card')" /><div class="name">ROSS</div><div class="label">The protection phase</div><p>The scorecard has shifted from earning to protecting.</p></div>
+      <div class="persona-card"><img class="persona-thumb" src="./leah-thumb.jpg" alt="LEAH framework card" onclick="openLightbox('./leah-full.jpg', 'LEAH framework card')" /><div class="name">LEAH</div><div class="label">The legacy stage</div><p>The work is done. The assets are protected.</p></div>
+    </div>
+
+    <div class="nora-deepdive">
+      <div class="eyebrow">A closer look</div>
+      <h2 class="serif">NORA · Not Over-leveraged, Rising Ambition</h2>
+      <div class="lede">The tier between mass-market and wealth management, and the most overlooked opportunity in consumer finance.</div>
+      <p>Ages 26–35. Income $55K–$99K. 3 to 8 years into a career, and rising. NORA tracks spending, contributes to a 401(k), knows the difference between a high-yield and a standard savings account, and has probably already moved that money. NORA has built an emergency fund, but not a substantial investment portfolio yet.</p>
+      <p>The industry has spent years chasing HENRYs (High Earners, Not Rich Yet). But "rich" isn't what you earn, it's what you keep and protect. By that measure, HENRY isn't the target. NORA is: disciplined by choice, digital-first, self-directed, and accountable for every dollar in and out.</p>
+      <p>NORA needs more than the mass-market product suite and earns too little to unlock wealth management, which doesn't start until $250K–$1M in investable assets. And yet this segment controls 51% of all U.S. investable assets: 39 million households waiting for a bank built for where they're headed, not just where they are.</p>
+      <p class="closer">The institution that builds for NORA supports a generation rather than a segment.</p>
+      <div class="nora-card-img">
+        <img src="./nora-card-brand.png" alt="NORA framework card" onclick="openLightbox('./nora-card-brand.png', 'NORA framework card')" />
+        <div class="zoom-hint">Click to enlarge</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot">
+      <div>
+        <div class="foot-brand">
+          <img src="./Momentum Logo (Long) - Blk transparent.png" alt="Momentum Strategic Advisory" />
+        </div>
+        <div class="foot-tagline">Strategic Advisory · Fractional Chief Growth Officer for banks, credit unions, and digital banking brands.</div>
+      </div>
+      <div>
+        <div class="foot-heading">Explore</div>
+        <div class="foot-links">
+          <a href="/#work">Work</a>
+          <a href="/#frameworks" class="current">Lifecycle Frameworks</a>
+          <a href="/#services">Services</a>
+          <a href="/#approach">Approach</a>
+          <a href="/#engagements">Engagements</a>
+          <a href="/#about">About</a>
+        </div>
+      </div>
+      <div>
+        <div class="foot-heading">Connect</div>
+        <div class="foot-links">
+          <a href="mailto:brit@maxmomentum.pro">brit@maxmomentum.pro</a>
+          <a href="https://www.linkedin.com/in/brit-williams/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://calendly.com/brit-maxmomentum/new-meeting" target="_blank" rel="noopener">Book a call</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 Momentum Strategic Advisory · The NAMED Framework© 2026 Brit Williams. All rights reserved.</div>
+      <div>maxmomentum.pro</div>
+    </div>
+  </div>
+</footer>
+
+<div class="lightbox" id="img-lightbox" onclick="this.classList.remove('open')">
+  <div class="close-hint">Click anywhere to close ✕</div>
+  <img id="lightbox-img" src="" alt="" />
+</div>
+<script>
+  function openLightbox(src, alt) {
+    var img = document.getElementById('lightbox-img');
+    img.src = src;
+    img.alt = alt || '';
+    document.getElementById('img-lightbox').classList.add('open');
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('img-lightbox').classList.remove('open');
+  });
+  const nav = document.getElementById('nav');
+  const onScroll = () => {
+    if (window.scrollY > 8) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+</script>
+
+</body>
+</html>
