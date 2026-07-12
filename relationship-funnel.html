@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Relationship Funnel | Momentum Strategic Advisory</title>
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,500;1,8..60,600&family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root { --bg: #FAF8F4; --bg-alt: #DDD8CE; --ink: #1B1B1B; --ink-soft: #2F2F2F; --muted: #6F6A60; --rule: #D9D3C6; --teal: #0F5D63; --teal-dark: #0A4245; --teal-light: #1A8088; --teal-accent: #85CED2; --white: #FFFFFF; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--ink); font-family: 'Albert Sans', sans-serif; font-size: 18px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  .serif { font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-variation-settings: "opsz" 60; letter-spacing: -0.015em; }
+  .container { max-width: 1320px; margin: 0 auto; padding: 0 48px; }
+  section { padding: 72px 0; }
+  .eyebrow { text-transform: uppercase; letter-spacing: 0.22em; font-size: 14px; font-weight: 700; color: var(--teal); margin-bottom: 24px; }
+  h1, h2 { font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-variation-settings: "opsz" 60; letter-spacing: -0.02em; }
+  h1 { font-size: clamp(38px, 5vw, 60px); line-height: 1.08; }
+  p { color: var(--ink-soft); font-size: 18px; line-height: 1.65; }
+  p + p { margin-top: 18px; }
+  a { color: inherit; }
+  a.btn, .btn { display: inline-flex; align-items: center; gap: 10px; padding: 16px 28px; background: var(--teal); color: #FFFFFF !important; text-decoration: none; font-size: 15px; font-weight: 600; border-radius: 2px; border: 0; }
+  a.btn:hover { background: var(--teal-dark); }
+  .nav { position: sticky; top: 0; z-index: 50; background: rgba(250, 248, 244, 0.92); backdrop-filter: saturate(180%) blur(12px); -webkit-backdrop-filter: saturate(180%) blur(12px); border-bottom: 1px solid transparent; transition: border-color 0.3s ease; }
+  .nav.scrolled { border-bottom-color: var(--rule); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 84px; }
+  .brand-lockup { display: inline-flex; align-items: center; text-decoration: none; color: var(--ink); }
+  .brand-lockup img { height: 42px; width: auto; display: block; }
+  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-links a { text-decoration: none; color: var(--ink); font-size: 15px; font-weight: 500; letter-spacing: 0.02em; white-space: nowrap; }
+  .nav-links a:not(.btn):hover { color: var(--teal); }
+  .nav-links a.current { color: var(--teal); }
+  .breadcrumb { font-size: 13px; color: var(--muted); font-weight: 600; margin-bottom: 24px; }
+  .breadcrumb a { color: var(--teal); text-decoration: none; }
+  .tagline { font-family: 'Source Serif 4', serif; font-style: italic; font-weight: 600; color: var(--teal); font-size: clamp(20px, 2.2vw, 24px); margin-top: 20px; }
+  .bg-alt { background: var(--bg-alt); }
+
+  .rf-gap-check { position: relative; overflow: hidden; }
+  .rf-gap-check::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("./momentum-M-dark.png");
+    background-repeat: repeat;
+    background-size: 80px 80px;
+    background-position: center;
+    opacity: 0.045;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .rf-gap-check .container { position: relative; z-index: 1; }
+  .rf-panel { margin-top: 8px; background: var(--white); border-radius: 4px; padding: 48px; box-shadow: 0 20px 50px rgba(27,27,27,0.06); }
+  .rf-panel .kicker { font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--teal); font-weight: 700; margin-bottom: 18px; }
+  .fw-body ul { list-style: none; }
+  .fw-body ul li { position: relative; display: flex; gap: 16px; padding: 16px 0; border-top: 1px solid var(--rule); font-size: 17px; color: var(--ink); }
+  .fw-body ul li:first-child { border-top: none; padding-top: 0; }
+  .fw-body ul li:last-child { padding-bottom: 0; }
+  .fw-body ul li .qnum { font-family: 'Albert Sans', sans-serif; font-weight: 700; font-size: 13px; color: var(--teal); min-width: 22px; padding-top: 2px; }
+  .funnel-img { max-width: 460px; margin: 44px auto; text-align: center; }
+  .funnel-img img { width: 100%; height: auto; display: block; border-radius: 4px; border: 1px solid var(--rule); cursor: zoom-in; transition: transform 0.2s ease; }
+  .funnel-img img:hover { transform: scale(1.015); }
+  .funnel-img .zoom-hint { margin-top: 12px; font-size: 12px; color: var(--muted); }
+
+  .lightbox { position: fixed; inset: 0; background: rgba(10,10,10,0.88); display: none; align-items: center; justify-content: center; z-index: 999; padding: 40px; cursor: zoom-out; }
+  .lightbox.open { display: flex; }
+  .lightbox img { max-width: 92vw; max-height: 88vh; width: auto; height: auto; border-radius: 4px; box-shadow: 0 40px 100px rgba(0,0,0,0.5); }
+  .lightbox .close-hint { position: absolute; top: 28px; right: 36px; color: rgba(255,255,255,0.7); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; }
+  .fw-tie-in { margin-top: 40px; padding: 36px 40px; background: var(--ink); color: var(--white); border-radius: 3px; }
+  .fw-tie-in p { color: rgba(255,255,255,0.85); font-size: 17px; margin: 0; }
+  .fw-tie-in a { color: var(--teal-accent); text-decoration: underline; }
+  footer { padding: 64px 0; background: var(--bg); font-size: 14px; color: var(--muted); border-top: 1px solid var(--rule); }
+  footer .foot { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 48px; align-items: start; }
+  footer a { color: var(--muted); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.2s ease, border-color 0.2s ease; }
+  footer a:hover { color: var(--teal); border-bottom-color: var(--teal); }
+  .foot-brand { display: inline-flex; align-items: center; margin-bottom: 16px; }
+  .foot-brand img { height: 30px; width: auto; display: block; }
+  .foot-tagline { color: var(--muted); font-size: 14px; max-width: 32ch; line-height: 1.6; }
+  .foot-heading { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--teal); font-weight: 700; margin-bottom: 16px; }
+  .foot-links { display: flex; flex-direction: column; gap: 10px; }
+  .foot-links a.current { color: var(--teal); }
+  .foot-bottom { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; font-size: 13px; flex-wrap: wrap; gap: 16px; }
+  @media (max-width: 720px) { footer .foot { grid-template-columns: 1fr; gap: 40px; } }
+  @media (max-width: 820px) { .nav-links a:not(.btn) { display: none; } .container { padding: 0 24px; } }
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="/" class="brand-lockup" aria-label="Momentum, home">
+      <img src="./Momentum Logo (Long) - Blk transparent.png" alt="Momentum Strategic Advisory" />
+    </a>
+    <div class="nav-links">
+      <a href="/#work">Work</a>
+      <a href="/#frameworks" class="current">Lifecycle Frameworks</a>
+      <a href="/#services">Services</a>
+      <a href="/#approach">Approach</a>
+      <a href="/#engagements">Engagements</a>
+      <a href="/#about">About</a>
+      <a href="https://calendly.com/brit-maxmomentum/new-meeting" target="_blank" rel="noopener" class="btn">Book a call </a>
+    </div>
+  </div>
+</nav>
+
+<section>
+  <div class="container">
+    <div class="eyebrow">Signature Methodology</div>
+    <h1 class="serif">The Relationship Funnel</h1>
+    <div class="tagline">Account opening is not the finish line.</div>
+  </div>
+</section>
+
+<section style="padding-top: 0;">
+  <div class="container fw-body">
+    <p>Banks obsess over the Conversion Funnel because it's the part everyone knows how to measure. But the Conversion Funnel ends on Day 0, which is just the beginning. What you do between Day 0-90 actually determines whether a customer ever becomes valuable.</p>
+    <p>The Relationship Funnel picks up where the Conversion Funnel stops.</p>
+  </div>
+</section>
+
+<section class="bg-alt rf-gap-check">
+  <div class="container fw-body">
+    <div class="rf-panel">
+      <div class="kicker">Relationship Value Gap Check</div>
+      <p style="margin: 0 0 24px;">Ask these 4 questions to see if you have a Relationship Value gap:</p>
+      <ul>
+        <li><span class="qnum">01</span><span>Did your new customer fund the account, or just open it?</span></li>
+        <li><span class="qnum">02</span><span>Have you communicated since Day 0, or did you ghost them?</span></li>
+        <li><span class="qnum">03</span><span>Do they have a second product, or just the one they came for?</span></li>
+        <li><span class="qnum">04</span><span>Are they transacting, or dormant and counting down to attrition?</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container fw-body">
+    <div class="funnel-img">
+      <img src="./relationship-funnel-brand.png" alt="The Relationship Funnel infographic" onclick="document.getElementById('funnel-lightbox').classList.add('open')" />
+      <div class="zoom-hint">Click to enlarge</div>
+    </div>
+
+    <div class="fw-tie-in">
+      <p>This is the model behind <a href="./case-study.html">this case study</a>: a bank that grew total balances 207% against a 10% goal, cut attrition 41% against a 25% goal, and turned single-product account openers into funded, multi-product relationships.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot">
+      <div>
+        <div class="foot-brand">
+          <img src="./Momentum Logo (Long) - Blk transparent.png" alt="Momentum Strategic Advisory" />
+        </div>
+        <div class="foot-tagline">Strategic Advisory · Fractional Chief Growth Officer for banks, credit unions, and digital banking brands.</div>
+      </div>
+      <div>
+        <div class="foot-heading">Explore</div>
+        <div class="foot-links">
+          <a href="/#work">Work</a>
+          <a href="/#frameworks" class="current">Lifecycle Frameworks</a>
+          <a href="/#services">Services</a>
+          <a href="/#approach">Approach</a>
+          <a href="/#engagements">Engagements</a>
+          <a href="/#about">About</a>
+        </div>
+      </div>
+      <div>
+        <div class="foot-heading">Connect</div>
+        <div class="foot-links">
+          <a href="mailto:brit@maxmomentum.pro">brit@maxmomentum.pro</a>
+          <a href="https://www.linkedin.com/in/brit-williams/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://calendly.com/brit-maxmomentum/new-meeting" target="_blank" rel="noopener">Book a call</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 Momentum Strategic Advisory · The NAMED Framework© 2026 Brit Williams. All rights reserved.</div>
+      <div>maxmomentum.pro</div>
+    </div>
+  </div>
+</footer>
+
+<div class="lightbox" id="funnel-lightbox" onclick="this.classList.remove('open')">
+  <div class="close-hint">Click anywhere to close ✕</div>
+  <img src="./relationship-funnel-brand.png" alt="The Relationship Funnel infographic, enlarged" />
+</div>
+<script>
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('funnel-lightbox').classList.remove('open');
+  });
+  const nav = document.getElementById('nav');
+  const onScroll = () => {
+    if (window.scrollY > 8) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+</script>
+
+</body>
+</html>
