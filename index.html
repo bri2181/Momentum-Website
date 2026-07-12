@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Momentum Strategic Advisory — Fractional Chief Growth Officer for Banks & Credit Unions</title>
-<meta name="description" content="Momentum Strategic Advisory — Fractional Chief Growth Officer for banks, credit unions, and digital banking brands ready to grow with intent." />
+<title>Momentum Strategic Advisory | Fractional Chief Growth Officer for Banks & Credit Unions</title>
+<meta name="description" content="Momentum Strategic Advisory: Fractional Chief Growth Officer for banks, credit unions, and digital banking brands ready to grow with intent." />
 <link rel="icon" href="/favicon.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -137,17 +137,18 @@
     width: auto;
     display: block;
   }
-  .nav-links { display: flex; gap: 32px; align-items: center; }
+  .nav-links { display: flex; gap: 28px; align-items: center; }
   .nav-links a {
     text-decoration: none;
     color: var(--ink);
     font-size: 15px;
     font-weight: 500;
     letter-spacing: 0.02em;
+    white-space: nowrap;
   }
   .nav-links a:not(.btn):hover { color: var(--teal); }
 
-  @media (max-width: 820px) {
+  @media (max-width: 900px) {
     .nav-links a:not(.btn) { display: none; }
     .container { padding: 0 24px; }
   }
@@ -691,6 +692,33 @@
   .work-dark .work-hero-label { color: var(--white); }
   .work-dark .work-supporting { color: rgba(255, 255, 255, 0.68); }
 
+  /* ===== Recognition (tan, sits between Work and Frameworks) ===== */
+  .recognition-grid { margin-top: 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; border-top: 1px solid var(--rule); padding-top: 40px; }
+  .recognition-item .award-name { font-family: 'Source Serif 4', serif; font-weight: 600; font-style: italic; color: var(--teal); font-size: 24px; margin-bottom: 10px; }
+  .recognition-item p { font-size: 16px; color: var(--ink-soft); }
+  @media (max-width: 820px) { .recognition-grid { grid-template-columns: 1fr; gap: 32px; } }
+
+  /* ===== Lifecycle Frameworks teaser (cream, sits between Recognition and Services) ===== */
+  .frameworks-teaser .intro { max-width: 1180px; font-size: clamp(18px, 1.55vw, 20px); line-height: 1.55; margin-top: 24px; color: var(--ink-soft); }
+  .frameworks-cards { margin-top: 64px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .frameworks-card {
+    padding: 44px 40px;
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-decoration: none;
+    color: var(--ink);
+    transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+  .frameworks-card:hover { border-color: var(--teal); transform: translateY(-2px); }
+  .frameworks-card .tag { font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--teal); font-weight: 700; font-family: 'Albert Sans', sans-serif; }
+  .frameworks-card h3 { font-size: 26px; }
+  .frameworks-card p { color: var(--muted); font-size: 15.5px; line-height: 1.55; }
+  .frameworks-card .go { margin-top: auto; font-size: 14px; font-weight: 600; color: var(--teal); font-family: 'Albert Sans', sans-serif; }
+  @media (max-width: 820px) { .frameworks-cards { grid-template-columns: 1fr; } }
+
   /* ----- About ----- */
   .about-grid {
     margin-top: 72px;
@@ -993,8 +1021,6 @@
     .services-grid { grid-template-columns: 1fr; }
   }
 
-  /* ----- Final CTA mark (legacy; watermark handles the brand presence) ----- */
-
   /* ----- Section background variants ----- */
   .bg-alt { background: var(--bg-alt); }
 
@@ -1005,11 +1031,12 @@
 <!-- NAV -->
 <nav class="nav" id="nav">
   <div class="container nav-inner">
-    <a href="#top" class="brand-lockup" aria-label="Momentum — home">
+    <a href="#top" class="brand-lockup" aria-label="Momentum, home">
       <img src="./Momentum Logo (Long) - Blk transparent.png" alt="Momentum Strategic Advisory" />
     </a>
     <div class="nav-links">
       <a href="#work">Work</a>
+      <a href="#frameworks">Lifecycle Frameworks</a>
       <a href="#services">Services</a>
       <a href="#approach">Approach</a>
       <a href="#engagements">Engagements</a>
@@ -1024,7 +1051,7 @@
   <div class="container hero-inner">
     <img class="hero-mark" src="./Momentum Logo (square) - Blk transparent.png" alt="" aria-hidden="true" />
     <h1 class="serif">Strategic leadership creates <span class="accent">compounding growth</span>.</h1>
-    <p class="sub">For banks, credit unions, and digital banking brands ready to grow with intent. Senior growth leadership working alongside your executive team — and accountable for reaching the goals that matter most to you.</p>
+    <p class="sub">For banks, credit unions, and digital banking brands ready to grow with intent. Senior growth leadership working alongside your executive team, accountable for reaching the goals that matter most to you, built on <a href="#frameworks" style="color: var(--teal); text-decoration: underline;">2 proprietary growth frameworks</a>.</p>
     <div class="hero-ctas">
       <a href="https://calendly.com/brit-maxmomentum/new-meeting" target="_blank" rel="noopener" class="btn btn-lg">Book an Intro <span class="arrow">→</span></a>
       <a href="#approach" class="btn btn-lg">See how I work <span class="arrow">→</span></a>
@@ -1041,8 +1068,8 @@
     <div class="problem-grid">
       <div class="problem-item"><span class="num">01</span><p><strong>Deposit growth is stalled.</strong> Competitors are capturing share, and your institution lacks the strategic clarity to break through in a crowded market.</p></div>
       <div class="problem-item"><span class="num">02</span><p><strong>Success outcomes are not clear or defined.</strong> Customers treat you transactionally, relationships stay shallow, retention suffers, and customer lifetime value never compounds.</p></div>
-      <div class="problem-item"><span class="num">03</span><p><strong>Lack of marketing accountability at the executive level.</strong> Teams execute tactics, but no one owns the comprehensive strategy that connects acquisition to profitability — or answers to the CEO for growth outcomes.</p></div>
-      <div class="problem-item"><span class="num">04</span><p><strong>Growth roadmap is unclear.</strong> The board is asking questions the CEO can't answer with confidence, and the cost of hiring full-time leadership is both uncertain and time-consuming.</p></div>
+      <div class="problem-item"><span class="num">03</span><p><strong>Marketing accountability stops below the executive level.</strong> Someone needs to own the comprehensive strategy that connects acquisition to profitability, and answer to the CEO for growth outcomes.</p></div>
+      <div class="problem-item"><span class="num">04</span><p><strong>Growth roadmap is unclear.</strong> The board is asking questions the CEO would like to answer with confidence, and the cost of hiring full-time leadership is both uncertain and time-consuming.</p></div>
     </div>
 
     <div class="closing-banner">
@@ -1061,27 +1088,27 @@
     <div class="why-fractional-grid">
       <div class="why-fractional-item">
         <div class="fractional-stat">4–6 Mo</div>
-        <div class="fractional-stat-label">Saved on hiring — leadership scaled to your needs</div>
+        <div class="fractional-stat-label">Saved on hiring · Leadership scaled to your needs</div>
         <h3>Flexible Leadership Commitment</h3>
-        <p>A full-time CMO takes 4–6 months to hire and onboard, with $120K–$240K in annual comp plus six figures in recruiting and onboarding fees — all before they produce a dollar of impact. The fractional model right-sizes senior accountability to your goals and your priorities — without the hiring cycle or long-term overhead.</p>
+        <p>A full-time CMO takes 4–6 months to hire and onboard, with $120K–$240K in annual comp plus $50–75K in hiring fees. The fractional model right-sizes senior accountability to your goals and your moment, without the hiring cycle or long-term overhead.</p>
       </div>
       <div class="why-fractional-item">
         <div class="fractional-stat">90 Days</div>
         <div class="fractional-stat-label">From audit to a deployable growth strategy</div>
         <h3>Immediate Impact</h3>
-        <p>No six-month onboarding. Your Fractional CGO hits the ground running: 30 days for a diagnostic audit, 60 days for a strategy, 90 days for a plan ready to execute. You're compressing months of work into weeks.</p>
+        <p>No 6-month onboarding. Your Fractional CGO hits the ground running: 30 days for a diagnostic audit, 60 days for a strategy, 90 days for a plan ready to execute. You're compressing months of work into weeks.</p>
       </div>
       <div class="why-fractional-item">
         <div class="fractional-stat">10 Hrs</div>
         <div class="fractional-stat-label">Weekly, embedded at the executive level</div>
         <h3>Real Accountability</h3>
-        <p>This isn't consulting advice to implement later. You get a senior leader embedded in your business — attending leadership meetings, managing your team, reporting directly to the CEO, and carrying full responsibility for growth outcomes.</p>
+        <p>This isn't consulting advice to implement later. You get a senior leader embedded in your business: attending leadership meetings, managing your team, reporting directly to the CEO, and carrying full responsibility for growth outcomes.</p>
       </div>
       <div class="why-fractional-item">
         <div class="fractional-stat">15+ Yrs</div>
         <div class="fractional-stat-label">Leading banking and retail finance growth</div>
         <h3>Proven Expertise</h3>
-        <p>More than a decade of real banking experience. You're not paying for someone to learn your industry — you're gaining access to someone who has scaled deposits, launched digital brands, and built growth strategies that work at scale.</p>
+        <p>More than a decade of real banking experience. You're not paying for someone to learn your industry. You're gaining access to someone who has successfully scaled deposits, launched digital brands, and built growth strategies that work at scale.</p>
       </div>
     </div>
   </div>
@@ -1101,9 +1128,9 @@
           <div class="context">Direct-to-consumer digital banking brand</div>
         </div>
         <div class="work-outcome">
-          <div class="work-hero-stat">$275M</div>
-          <div class="work-hero-label">in deposits, scaled from $25M in a single year.</div>
-          <p class="work-supporting">Recognized with the ABA Brand Slam Award for website redesign, and named NerdWallet's Best Money Market of 2026 through earned media alone.</p>
+          <div class="work-hero-stat">$277MM</div>
+          <div class="work-hero-label">in total balances, scaled from $51MM.</div>
+          <p class="work-supporting"><a href="./case-study.html" style="color: var(--teal-accent);">Read the full case study →</a></p>
         </div>
       </div>
       <div class="work-row">
@@ -1113,7 +1140,7 @@
         </div>
         <div class="work-outcome">
           <div class="work-hero-stat">9 Brands</div>
-          <div class="work-hero-label">Led digital growth across national retail finance brands — including Best Buy and Macy's.</div>
+          <div class="work-hero-label">Led digital growth across national retail finance brands, including Best Buy and Macy's.</div>
           <p class="work-supporting">Recognized among the top &lt;1% of employees as a Leader in Excellence.</p>
         </div>
       </div>
@@ -1132,36 +1159,78 @@
   </div>
 </section>
 
+<!-- RECOGNITION -->
+<section id="recognition" class="bg-alt">
+  <div class="container">
+    <div class="eyebrow">Recognition</div>
+    <h2 class="serif wide">Awards along the way.</h2>
+    <div class="recognition-grid">
+      <div class="recognition-item">
+        <div class="award-name">NerdWallet's Best Money Market of 2026</div>
+        <p>Chosen by NerdWallet to spotlight exceptional value and consumer-friendly features among thousands of financial products reviewed.</p>
+      </div>
+      <div class="recognition-item">
+        <div class="award-name">ABA Brand Slam Award</div>
+        <p>Awarded for website redesign under the American Bankers Association's national brand awards program.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIFECYCLE FRAMEWORKS TEASER -->
+<section id="frameworks" class="frameworks-teaser rule-top">
+  <div class="container">
+    <div class="eyebrow">Original Frameworks</div>
+    <h2 class="serif wide">Strategic lifecycle frameworks I've created and proven.</h2>
+    <p class="intro">Most banking growth strategy stops at acquisition, and again with simple demographics. I built these frameworks from firsthand experience, testing and learning toward what drives the greatest success. My approach is founded on traditional, trusted methodologies, blended with solutions for the most common gaps and misconceptions in maximizing growth.</p>
+
+    <div class="frameworks-cards">
+      <a class="frameworks-card" href="./relationship-funnel.html">
+        <div class="tag">Signature Methodology</div>
+        <h3 class="serif">The Relationship Funnel</h3>
+        <p>Most banks stop measuring the moment an account opens. This is the model for everything that happens after Day 0: the one behind a 207% balance lift and a 41% drop in attrition.</p>
+        <div class="go">See the framework →</div>
+      </a>
+      <a class="frameworks-card" href="./named-framework.html">
+        <div class="tag">Consumer Segmentation Using Personas</div>
+        <h3 class="serif">The NAMED Framework<sup style="font-size: 12px; font-weight: 400;">©</sup></h3>
+        <p>Banks primarily support 2 types of customers: mass-market, or high-net-worth. I named 8 banking life stages that define the needs and wants of customers in each. Emotions drive decisions, so the best success lies in connection with a person, not a metric.</p>
+        <div class="go">Meet the 8 profiles →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- SERVICES -->
 <section id="services" class="bg-alt">
   <div class="container">
     <div class="eyebrow">Services</div>
     <h2 class="serif wide">How growth gets built.</h2>
-    <p class="services-intro">Momentum partners with financial institutions at the leadership level — stepping in as your Fractional Chief Growth Officer and staying until the results speak for themselves. Every engagement is shaped to your market, your team, and the goals you're trying to reach. A select number of clients at a time, so every one gets real focus.</p>
-    <p class="services-intro"><strong>The role covers four core disciplines:</strong></p>
+    <p class="services-intro">Momentum partners with financial institutions at the leadership level, stepping in as your Fractional Chief Growth Officer and staying until the results speak for themselves. Every engagement is shaped to your market, your team, and the goals you're trying to reach. A select number of clients at a time, so every one gets real focus.</p>
+    <p class="services-intro"><strong>The role covers 4 core disciplines:</strong></p>
 
     <div class="services-grid">
       <div class="service-card">
         <h3>Marketing Strategy</h3>
-        <p>Clear, actionable plans that connect your brand to the right customers at the right time. A strategy built specifically for your market, your products, and your growth targets — no generic frameworks.</p>
+        <p>Clear, actionable plans that connect your brand to the right customers at the right time. A strategy built specifically for your market, your products, and your growth targets. No generic playbooks.</p>
         <div class="service-best"><strong>Best for</strong>Banks and credit unions that need a roadmap, not just advice.</div>
       </div>
 
       <div class="service-card">
         <h3>Customer Lifecycle</h3>
-        <p>Mapping the full customer journey across conversion, engagement, and retention — then strengthening every stage so first impressions become long-term relationships and more of your customers grow with you year after year.</p>
+        <p>Mapping the full customer journey across conversion, engagement, and retention, then strengthening every stage so first impressions become long-term relationships and more of your customers grow with you year after year.</p>
         <div class="service-best"><strong>Best for</strong>Institutions ready to deepen relationships and build compounding growth.</div>
       </div>
 
       <div class="service-card">
         <h3>Digital Optimization</h3>
-        <p>Turning digital channels into measurable growth engines. Conversion funnel analysis, UX improvements, and campaign performance — the places where strategic direction turns into the metrics that move your business.</p>
+        <p>Turning digital channels into measurable growth engines. Conversion funnel analysis, UX improvements, and campaign performance: the places where strategic direction turns into the metrics that move your business.</p>
         <div class="service-best"><strong>Best for</strong>Institutions with a digital presence that isn't performing the way it should.</div>
       </div>
 
       <div class="service-card">
         <h3>Product Optimization</h3>
-        <p>Diagnosing where customers drop off, where friction is quietly costing you, and where product gaps are holding growth back — so the products you already have perform the way they were built to.</p>
+        <p>Diagnosing where customers drop off, where friction is quietly costing you, and where product gaps are holding growth back, so the products you already have perform the way they were built to.</p>
         <div class="service-best"><strong>Best for</strong>Banks and credit unions whose products should be delivering more than they are.</div>
       </div>
     </div>
@@ -1173,28 +1242,28 @@
   <div class="container">
     <div class="eyebrow">Approach</div>
     <h2 class="serif wide">A senior growth leader working alongside your executive team.</h2>
-    <p class="approach-intro">I step in alongside your leadership as a fractional executive — 10 hours a week, reporting to the CEO, committed to the results we build together.</p>
+    <p class="approach-intro">I step in alongside your leadership as a fractional executive: 10 hours a week, reporting to the CEO, committed to the results we build together.</p>
 
     <div class="steps">
       <div class="step">
-        <div class="step-num">01 — Diagnose</div>
+        <div class="step-num">01. Diagnose</div>
         <h3 class="serif">The first 30 days.</h3>
-        <p>A deep audit across acquisition, deposits, lifecycle, brand, and marketing operations. I gather the information needed to see the full picture — internally and externally — without disrupting your team's momentum.</p>
+        <p>A deep audit across acquisition, deposits, lifecycle, brand, and marketing operations. I gather the information needed to see the full picture (internally and externally) without disrupting your team's momentum.</p>
       </div>
       <div class="step">
-        <div class="step-num">02 — Prioritize</div>
+        <div class="step-num">02. Prioritize</div>
         <h3 class="serif">60 days for a strategy.</h3>
         <p>One written plan with the KPIs that matter and a shared picture of what success looks like. Ranked by impact and time-to-revenue, aligned across your team, your CFO, and your board.</p>
       </div>
       <div class="step">
-        <div class="step-num">03 — Execute</div>
+        <div class="step-num">03. Execute</div>
         <h3 class="serif">Deliver the plan.</h3>
-        <p>I drive the strategy forward alongside your team — weekly operating rhythm, monthly reporting, and quarterly board-ready updates. Accountable for the outcomes we set together.</p>
+        <p>I drive the strategy forward alongside your team: weekly operating rhythm, monthly reporting, and quarterly board-ready updates. Accountable for the outcomes we set together.</p>
       </div>
     </div>
 
     <div class="after-90">
-      <div class="label">After 90 days —</div>
+      <div class="label">After 90 days:</div>
       <p>Ongoing fractional CGO leadership, typically 6 to 18 months, until growth is compounding and your in-house team can carry it forward.</p>
     </div>
   </div>
@@ -1205,13 +1274,13 @@
   <div class="container">
     <div class="engagements-heading">
       <div class="eyebrow">Engagements</div>
-      <h2 class="serif">Three ways to work together.</h2>
+      <h2 class="serif">3 ways to work together.</h2>
     </div>
     <div class="engagements">
       <div class="card featured">
         <div class="tag">Most common</div>
         <h3>Fully Engaged</h3>
-        <p>10 hours per week as your Fractional Chief Growth Officer. Reporting to the CEO, integrated with your leadership team, and accountable for the growth plan end-to-end — 90-day targets, long-term strategy, and the KPIs that prove it's working.</p>
+        <p>10 hours per week as your Fractional Chief Growth Officer. Reporting to the CEO, integrated with your leadership team, and accountable for the growth plan end-to-end: 90-day targets, long-term strategy, and the KPIs that prove it's working.</p>
         <div class="best-for"><strong>Best for</strong>Institutions ready to invest in senior growth leadership without hiring full-time. 3-month minimum.</div>
       </div>
       <div class="card">
@@ -1223,7 +1292,7 @@
       <div class="card">
         <div class="tag">On-ramp</div>
         <h3>Half-Day Consult</h3>
-        <p>4 hours. A focused strategy session evaluating your marketing history, current performance, team, and assets — so you leave with a prioritized near-term recommendation and clarity on what a larger engagement would require.</p>
+        <p>4 hours. A focused strategy session evaluating your marketing history, current performance, team, and assets, so you leave with a prioritized near-term recommendation and clarity on what a larger engagement would require.</p>
         <div class="best-for"><strong>Best for</strong>CEOs and marketing leaders who want an honest diagnosis before committing to a larger engagement.</div>
       </div>
     </div>
@@ -1240,21 +1309,21 @@
         <img src="./Bio Portrait_0426.jpg" alt="Brit Williams, Founder of Momentum Strategic Advisory" />
       </div>
       <div class="about-body">
-        <p>Brit Williams is a digital growth strategist who has spent nearly two decades helping financial institutions accelerate performance — optimizing the conversion funnel, deepening customer engagement, and building marketing strategies that actually move spend and deposits.</p>
+        <p>Brit Williams is a digital growth strategist who has spent nearly two decades helping financial institutions accelerate performance: optimizing the conversion funnel, deepening customer engagement, and building marketing strategies that actually move spend and deposits.</p>
 
-        <div class="pull-quote">"The best growth came from fixing the right things at the right time, in the right place — not from chasing trends."</div>
+        <div class="pull-quote">"The best value doesn't come from buying more volume. It comes from fixing what is broken first."</div>
 
-        <p>Through a decade at Citi, Brit led digital strategy for some of the most recognized retail finance programs in the country — including Macy's, Best Buy, and Office Depot — managing omni-channel marketing across nine national brands and enterprise-scale initiatives spanning more than 20 business units. She was recognized among the top 1% of employees as a "Leader in Excellence."</p>
+        <p>Through a decade at Citi, Brit led digital strategy for some of the most recognized retail finance programs in the country (including Macy's, Best Buy, and Office Depot), managing omni-channel marketing across 9 national brands and enterprise-scale initiatives spanning more than 20 business units. She was recognized among the top 1% of employees as a "Leader in Excellence."</p>
 
-        <p>Most recently, as SVP of Digital Growth &amp; Partnerships, she scaled a digital brand from $25M to nearly $275M in deposits in a single year. That brand earned the ABA Brand Slam Award for website redesign and was named NerdWallet's Best Money Market of 2026 through earned media alone. Her expertise in Banking-as-a-Service also led to the launch of a niche digital bank, along with multiple fintech partnerships.</p>
+        <p>Most recently, as SVP of Digital Growth &amp; Partnerships, she scaled a digital brand's total balances from $51MM to $277MM. That brand earned the ABA Brand Slam Award for website redesign and was named NerdWallet's Best Money Market of 2026 through earned media alone. Her expertise in Banking-as-a-Service also led to the launch of a niche digital bank, along with multiple fintech partnerships.</p>
 
         <p>She founded Momentum Strategic Advisory to bring that same strategic firepower to banks and credit unions ready to grow but missing the roadmap or the results. Momentum exists for institutions serious about growth that want a partner who has done it before, at scale.</p>
 
-        <p>Brit is a featured speaker on Gen Z engagement, personalized digital banking, and the future of financial services marketing. She has been sourced for industry articles and publishes her own perspective on where the sector is headed.</p>
+        <p>Brit is a featured speaker on Gen Z engagement, personalized digital banking, and the future of financial services marketing. She has been sourced for industry articles and publishes her own perspective on where banking is headed, including <a href="#frameworks" style="color: var(--teal); text-decoration: underline;">2 original frameworks</a>, the Relationship Funnel and the NAMED consumer segmentation model.</p>
 
         <div class="credentials">
           <strong>Selected credentials</strong>
-          Visa Certifications — Program Management &amp; Digital Payments · ABA Brand Slam Award recipient · NerdWallet's Best Money Market of 2026 (brand recognition) · Featured speaker on Gen Z engagement &amp; personalized digital banking
+          Visa Certifications: Program Management &amp; Digital Payments · ABA Brand Slam Award recipient · NerdWallet's Best Money Market of 2026 (brand recognition) · Featured speaker on Gen Z engagement &amp; personalized digital banking · Originator, the NAMED Framework© and the Relationship Funnel
         </div>
       </div>
     </div>
@@ -1273,7 +1342,15 @@
       </div>
       <div class="faq-item">
         <h3>How many clients do you take at a time?</h3>
-        <p>Momentum keeps capacity intentionally limited — no more than three active Fully Engaged retainers at once. That's how every client gets real leadership.</p>
+        <p>Momentum keeps capacity intentionally limited: no more than three active Fully Engaged retainers at once. That's how every client gets real leadership.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How is this different from a consulting firm?</h3>
+        <p>Firms sell decks and advice, often leaving you to gain internal acceptance, and find the time and capacity to implement on your own.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What if my team is resistant to outside leadership?</h3>
+        <p>That's common. The role works because it's not about replacing your team. It's about amplifying what they're capable of and removing obstacles. We start with listening, understanding what they care about, and building credibility. Most teams become advocates once they see the difference clear strategy makes.</p>
       </div>
       <div class="faq-item">
         <h3>What size institution is the right fit?</h3>
@@ -1282,14 +1359,6 @@
       <div class="faq-item">
         <h3>Do you work with agencies or vendors?</h3>
         <p>Yes. Part of fractional leadership is evaluating and managing marketing partners as an extension of your team.</p>
-      </div>
-      <div class="faq-item">
-        <h3>How is this different from a consulting firm?</h3>
-        <p>Firms sell decks and advice — often leaving you to gain internal acceptance, and find the time and capacity to implement on your own.</p>
-      </div>
-      <div class="faq-item">
-        <h3>What if my team is resistant to outside leadership?</h3>
-        <p>That's common. The role works because it's not about replacing your team — it's about amplifying what they're capable of and removing obstacles. We start with listening, understanding what they care about, and building credibility. Most teams become advocates once they see the difference clear strategy makes.</p>
       </div>
     </div>
   </div>
@@ -1302,7 +1371,7 @@
     <h2 class="serif">Is growth your <em>biggest</em> challenge?</h2>
     <p class="sub">Book a 20-minute introductory call. We'll assess the growth gaps and discuss what it would take to fix them.</p>
     <a href="https://calendly.com/brit-maxmomentum/new-meeting" target="_blank" rel="noopener" class="btn btn-lg">Book a call <span class="arrow">→</span></a>
-    <p class="email">Or reach out directly — <a href="mailto:brit@maxmomentum.pro">brit@maxmomentum.pro</a></p>
+    <p class="email">Or reach out directly: <a href="mailto:brit@maxmomentum.pro">brit@maxmomentum.pro</a></p>
   </div>
 </section>
 
@@ -1320,6 +1389,7 @@
         <div class="foot-heading">Explore</div>
         <div class="foot-links">
           <a href="#work">Work</a>
+          <a href="#frameworks">Lifecycle Frameworks</a>
           <a href="#services">Services</a>
           <a href="#approach">Approach</a>
           <a href="#engagements">Engagements</a>
@@ -1336,7 +1406,7 @@
       </div>
     </div>
     <div class="foot-bottom">
-      <div>© 2026 Momentum Strategic Advisory. All rights reserved.</div>
+      <div>© 2026 Momentum Strategic Advisory · The NAMED Framework© 2026 Brit Williams. All rights reserved.</div>
       <div>maxmomentum.pro</div>
     </div>
   </div>
