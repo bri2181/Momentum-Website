@@ -1,0 +1,19 @@
+{
+  "name": "momentum-website",
+  "version": "1.0.0",
+  "description": "Momentum Strategic Advisory website - Fractional Chief Growth Officer for banks and credit unions",
+  "private": true,
+  "scripts": {
+    "build": "echo 'Static site - no build step required'",
+    "test": "echo 'No tests configured'"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^1.3.1"
+  },
+  "keywords": [
+    "static-site",
+    "vercel"
+  ],
+  "author": "Momentum Strategic Advisory",
+  "license": "UNLICENSED"
+}
